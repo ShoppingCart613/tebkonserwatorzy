@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from konserwatorzy.models import Zadanie
+
+admin.site.register(Zadanie)
