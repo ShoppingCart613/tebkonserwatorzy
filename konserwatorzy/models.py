@@ -5,9 +5,9 @@ class Zadanie(models.Model):
     opis = models.CharField(max_length=2000)
     data_postu = models.DateField()
 
-    Stan = models.CharField(choices=(
-        (1,'wykonane'),
-        (2,'w trakcie'),
-        (3,'oczekujące')
-    ), max_length=1)
+    Stan = models.CharField(choices={
+        'wykonane': 'wykonane',
+        'w_trakcie': 'w trakcie',
+        'oczekujace': 'oczekujące',
+    }, default='wykonane', max_length=10)
 
