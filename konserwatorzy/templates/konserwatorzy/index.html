@@ -1,0 +1,9 @@
+{% if zadanie_list %}
+    <ul>
+    {% for zad in zadanie_list %}
+        <li><a href="{% url 'zadanie' zad.id %}">{{ zad.nazwa }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Brak zadań.</p>
+{% endif %}
