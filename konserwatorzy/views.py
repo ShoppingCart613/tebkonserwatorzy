@@ -22,7 +22,7 @@ def add_zadanie(request):
         if zadanie_form.is_valid():
             new_zad = zadanie_form.save(commit=False)
             new_zad.save()
-        return render(request, 'konserwatorzy/index.html')
+        return render(request, 'konserwatorzy/dodano.html')
 
     else:
         zadanie_form = ZadanieForm()

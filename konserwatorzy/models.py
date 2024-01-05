@@ -6,11 +6,11 @@ class Zadanie(models.Model):
     opis = models.CharField(max_length=2000)
     data_postu = models.DateTimeField(default=timezone.now())
 
-    stan = models.CharField(choices={
-        'wykonane': 'wykonane',
-        'w_trakcie': 'w trakcie',
-        'oczekujace': 'oczekujące',
-    }, default='wykonane', max_length=10)
+    stan = models.CharField(choices=[
+        ('not_done', 'not done'),
+        ('in_progress', 'in progress'),
+        ('done','done'),
+    ], default='not_done', max_length=20)
 
     def __str__(self):
         return self.nazwa
