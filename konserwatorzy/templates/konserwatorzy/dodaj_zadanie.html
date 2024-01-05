@@ -1,0 +1,9 @@
+{% block title %}Dodaj zadanie{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+    {{ zadanie_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Dodaj"></p>
+    </form>
+{% endblock %}

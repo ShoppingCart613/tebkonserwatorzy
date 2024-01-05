@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.template import loader
 from django.http import HttpResponse
 from .models import Zadanie
+from .forms import ZadanieForm
 
 def index(request):
     zadanie_list = Zadanie.objects.order_by("-data_postu")[:5]
@@ -14,3 +15,15 @@ def zadanie(request, zadanie_id):
     template = loader.get_template("konserwatorzy/zadanie.html")
     context={"zadanie": zadanie}
     return HttpResponse(template.render(context,request))
+
+def add_zadanie(request):
+    if request.method == 'POST':
+        zadanie_form = ZadanieForm(request.POST)
+        if zadanie_form.is_valid():
+            new_zad = zadanie_form.save(commit=False)
+            new_zad.save()
+        return render(request, 'konserwatorzy/index.html')
+
+    else:
+        zadanie_form = ZadanieForm()
+    return render(request, 'konserwatorzy/dodaj_zadanie.html',{'zadanie_form': zadanie_form})
