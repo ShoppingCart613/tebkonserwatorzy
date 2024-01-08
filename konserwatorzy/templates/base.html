@@ -1,0 +1,38 @@
+<head>
+    <title>{%  block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        background-color: #c3d2db;
+    }
+    
+    header {
+        background-color: #004d7d;
+    }
+    
+    .nav-link {
+        color: white;   
+    }
+
+    header h1 {
+        color: white;
+        font-size:25px;
+    }
+</style>
+<body>
+    <header>
+        <div class="container-fluid">
+        <nav class="navbar">
+            <h1>TEB Konserwatorzy</h1>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link" href="{% url "index" %}">Zadania</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "add_zadanie" %}">Dodaj Zadanie</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "login" %}">Wyloguj</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

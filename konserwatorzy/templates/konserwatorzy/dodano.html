@@ -1,6 +1,8 @@
-{% block title %}
-Dodano
+{% extends "base.html" %}
 
+{% block title %} {% endblock %}
+{% block content %}
+Dodano
 <a href="{% url 'add_zadanie' %}">dodaj nowy</a>
 <a href="{% url 'index' %}">wróć</a>
 {% endblock %}

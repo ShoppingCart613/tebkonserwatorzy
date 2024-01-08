@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}{{  zadanie.nazwa  }}{% endblock %}
+
+{% block content %}
 <h1>{{ zadanie.nazwa }}</h1>
 <p>{{ zadanie.opis }}</p>
 <p>stan: {{ zadanie.stan }}</p>
+{% endblock %}
