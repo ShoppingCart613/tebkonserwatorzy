@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Dodaj zadanie{% endblock %}
+{% block title %}Edytuj zadanie{% endblock %}
 
 {% block content %}
 <div class="position-absolute top-50 start-50 translate-middle">
@@ -15,7 +15,7 @@
     Ważność: <br>
     {{ zadanie_form.waznosc }} <br>
     {% csrf_token %}
-    <p class="nav nav-pills"><input class="nav-link active" type="submit" value="Dodaj"></p>
+    <p class="nav nav-pills"><input class="nav-link active" type="submit" value="Zapisz"></p>
     </div>
     </form>
 </div>

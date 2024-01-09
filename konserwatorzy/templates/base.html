@@ -19,6 +19,12 @@
         color: white;
         font-size:25px;
     }
+
+    .form-control {
+        background-color: #004d7d;
+        color: white;
+    }
+    
 </style>
 <body>
     <header>
@@ -28,7 +34,7 @@
             <ul class="nav nav-pills">
                 <li class="nav-item"><a class="nav-link" href="{% url "index" %}">Zadania</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url "add_zadanie" %}">Dodaj Zadanie</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url "login" %}">Wyloguj</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url "logout" %}">Wyloguj</a></li>
             </ul>
         </nav>
         </div>

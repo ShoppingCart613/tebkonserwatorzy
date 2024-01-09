@@ -3,7 +3,14 @@
 {% block title %}{{  zadanie.nazwa  }}{% endblock %}
 
 {% block content %}
-<h1>{{ zadanie.nazwa }}</h1>
-<p>{{ zadanie.opis }}</p>
-<p>stan: {{ zadanie.stan }}</p>
+<div class="container">
+    <h1>{{ zadanie.nazwa }}</h1>
+    <p class="form-control" style="width: 200px;">stan: {{ zadanie.stan }}</p>
+    <p class="form-control" style="width: 200px;">ważność: {{ zadanie.waznosc }}</p>
+    <h5>Opis</h5>
+    <p>{{ zadanie.opis }}</p>
+    <div class="nav nav-pills">
+    <a class="nav-link active" href="{% url 'edit' zadanie.id%}">Edytuj</a>
+    </div>
+</div>
 {% endblock %}

@@ -2,7 +2,11 @@
 
 {% block title %} {% endblock %}
 {% block content %}
-Dodano
-<a href="{% url 'add_zadanie' %}">dodaj nowy</a>
-<a href="{% url 'index' %}">wróć</a>
+<div class="container">
+<h2>Dodano</h2>
+<div class="nav nav-pills">
+<a class="nav-link active me-2" href="{% url 'add_zadanie' %}">dodaj nowy</a>
+<a class="nav-link active" href="{% url 'index' %}">wróć</a>
+</div>
+</div>
 {% endblock %}

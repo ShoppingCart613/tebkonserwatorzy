@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Logowanie{% endblock %}
+
+{% block content %}
+    <div class="position-absolute top-50 start-50 translate-middle">
+    <div class="login-form">
+    <form action="{% url 'login' %}" method="post">
+        <div class="form-control"> 
+            <h1>Logowanie</h1>
+            {% if form.errors %}
+                <p> Nazwa użytkownika lub hasło są niepoprawne. Spróbuj ponownie.</p>
+            {% endif %}
+            Nazwa:
+            {{ form.username }} <br>
+            Hasło:
+            {{ form.password }} <br>
+        {% csrf_token %}
+        <p class="nav nav-pills"><input class="nav-link active" type="submit" value="Zaloguj"></p>
+        </div>
+    </form>
+    </div>
+
+{% endblock %}
